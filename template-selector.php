@@ -35,15 +35,22 @@ class TemplateSelector
     {
         global $post;
 
+        $templates = apply_filters('template_selector_available', array(
+            "default" => "Default"
+        ));
         // Add a nonce field so we can check for it later.
         wp_nonce_field(self::META_STRING, self::META_STRING . '_nonce');
 
         $current = get_post_meta($post->ID, '_wp_page_template', true);
 
-        echo '<label for="' . self::META_STRING . '">';
+        echo '<p><label for="' . self::META_STRING . '">';
         _e('Select template to be used', self::TRANSLATION_DOMAIN);
-        echo '</label> ';
-        echo '<input id="' . self::META_STRING . '" name="' . self::META_STRING . '" value="'. $current . '">';
+        echo '</label></p>';
+        echo '<select id="' . self::META_STRING . '" name="' . self::META_STRING . '">';
+        foreach ($templates as $slug => $name) {
+            echo '<option value="'. $slug .'" ' . ($current == $slug ? 'selected' : '') . '>' . $name . '</option>';
+        }
+        echo '<select>';
     }
 
     public function saveSelectedTemplate($post_id)
