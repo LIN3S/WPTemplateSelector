@@ -1,0 +1,13 @@
+{
+  "name": "template-selector",
+  "description": "Template selector",
+  "homepage": "http://lin3s.com",
+  "type": "wordpress-plugin",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Gorka Laucirica",
+      "email": "gorka@lin3s.com"
+    }
+  ]
+}
