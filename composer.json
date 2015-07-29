@@ -1,13 +1,14 @@
 {
-  "name": "template-selector",
-  "description": "Template selector",
-  "homepage": "http://lin3s.com",
-  "type": "wordpress-plugin",
-  "license": "proprietary",
-  "authors": [
-    {
-      "name": "Gorka Laucirica",
-      "email": "gorka@lin3s.com"
-    }
-  ]
+    "name": "template-selector",
+    "description": "Adds a field to declare templates used by pages dynamically",
+    "keywords": ["lin3s", "wp-plugin", "template-selector"],
+    "type": "wordpress-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "LIN3S",
+            "email": "info@lin3s.com",
+            "homepage": "https://lin3s.com"
+        }
+    ]
 }
