@@ -1,16 +1,27 @@
 # Template selector
 > Adds a field to declare templates used by pages dynamically
 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/LIN3S/Distribution/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/LIN3S/Distribution/?branch=master)
-[![Total Downloads](https://poser.pugx.org/lin3s/lin3s-distribution/downloads)](https://packagist.org/packages/lin3s/lin3s-distribution)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/LIN3S/WPTemplateSelector/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/LIN3S/WPTemplateSelector/?branch=master)
+[![Total Downloads](https://poser.pugx.org/lin3s/wp-template-selector/downloads)](https://packagist.org/packages/lin3s/wp-template-selector)
 &nbsp;&nbsp;&nbsp;&nbsp;
-[![Latest Stable Version](https://poser.pugx.org/lin3s/lin3s-distribution/v/stable.svg)](https://packagist.org/packages/lin3s/lin3s-distribution)
-[![Latest Unstable Version](https://poser.pugx.org/lin3s/lin3s-distribution/v/unstable.svg)](https://packagist.org/packages/lin3s/lin3s-distribution)
+[![Latest Stable Version](https://poser.pugx.org/lin3s/wp-template-selector/v/stable.svg)](https://packagist.org/packages/lin3s/wp-template-selector)
+[![Latest Unstable Version](https://poser.pugx.org/lin3s/wp-template-selector/v/unstable.svg)](https://packagist.org/packages/lin3s/wp-template-selector)
 
 ## Why?
 [LIN3S][1]'s [WPRouting][2] is a very robust solution to manage the Wordpress routing system in a [Symfony][3] way.
-However, it has a 
-Adds a simple input to type the template you want to use for each page. Useful when working with wp-routing.
+We came up with this solution in our way to a MVC architecture because many PHP files where scattered in our template
+root directory with dummy unstructured code.
+
+This way, we are now able to match routes used by Wordpress with the actions from our Controllers, letting us to keep
+a simpler a more intuitive theme folder structure for new comming developers.
+
+Is an alternative to using annotations to declare new page templates.
+
+We faced some issues when we started using WP-Routing plugin, creating a php file in theme's root folder had no sense
+just to add an annotation.
+
+With this plugin you can now use a hook to add your custom page templates, and a selector will be added in your page
+editor to select the one you need.
 
 ## Installation
 The recommended and the most suitable way to install is through [Composer][4]. Be sure that the tool is installed
@@ -28,19 +39,19 @@ in your system and copy the following piece of code inside your `composer.json`:
 ## Usage
 To declare the templates you want to use just add the following hook to your WordPress theme.
 
-    add_filter('template_selector_available', 'addAvailableTemplates');
+    add_filter('template_selector_available', [$this, 'templates']);
     
-    function addAvailableTemplates($templates) {
+    function templates($templates) {
         return array_merge($templates, [
-            "template-slug" => 'Template name shown in admin',
+            "template-slug"    => 'Template name shown in admin',
             "another-template" => 'Another template'
         ]);
     }
 
 ## Licensing Options
-[![License](https://poser.pugx.org/lin3s/lin3s-distribution/license.svg)](https://github.com/LIN3S/Distribution/blob/master/LICENSE)
+[![License](https://poser.pugx.org/lin3s/lin3s-wp-template-selector/license.svg)](https://github.com/LIN3S/WPTemplateSelector/blob/master/LICENSE)
 
 [1]: http://lin3s.com
-[2]: 
-[3]: 
+[2]: https://github.com/LIN3S/WPRouting
+[3]: https://symfony.com/
 [4]: https://getcomposer.org/
