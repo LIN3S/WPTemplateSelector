@@ -1,5 +1,5 @@
 {
-    "name": "template-selector",
+    "name": "lin3s/template-selector",
     "description": "Adds a field to declare templates used by pages dynamically",
     "keywords": ["lin3s", "wp-plugin", "template-selector"],
     "type": "wordpress-plugin",
