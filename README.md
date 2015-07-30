@@ -2,10 +2,10 @@
 > Adds a field to declare templates used by pages dynamically
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/LIN3S/WPTemplateSelector/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/LIN3S/WPTemplateSelector/?branch=master)
-[![Total Downloads](https://poser.pugx.org/lin3s/wp-template-selector/downloads)](https://packagist.org/packages/lin3s/wp-template-selector)
+[![Total Downloads](https://poser.pugx.org/lin3s/template-selector/downloads)](https://packagist.org/packages/lin3s/template-selector)
 &nbsp;&nbsp;&nbsp;&nbsp;
-[![Latest Stable Version](https://poser.pugx.org/lin3s/wp-template-selector/v/stable.svg)](https://packagist.org/packages/lin3s/wp-template-selector)
-[![Latest Unstable Version](https://poser.pugx.org/lin3s/wp-template-selector/v/unstable.svg)](https://packagist.org/packages/lin3s/wp-template-selector)
+[![Latest Stable Version](https://poser.pugx.org/lin3s/template-selector/v/stable.svg)](https://packagist.org/packages/lin3s/template-selector)
+[![Latest Unstable Version](https://poser.pugx.org/lin3s/template-selector/v/unstable.svg)](https://packagist.org/packages/lin3s/template-selector)
 
 ## Why?
 [LIN3S][1]'s [WPRouting][2] is a very robust solution to manage the Wordpress routing system in a [Symfony][3] way.
@@ -39,7 +39,7 @@ To declare the templates just add the following hook to your WordPress theme.
 
     add_filter('template_selector_available', [$this, 'templates']);
     
-    function templates($templates) {
+    public function templates($templates) {
         return array_merge($templates, [
             "template-slug"    => 'Template name shown in admin',
             "another-template" => 'Another template'
@@ -47,7 +47,7 @@ To declare the templates just add the following hook to your WordPress theme.
     }
 
 ## Licensing Options
-[![License](https://poser.pugx.org/lin3s/lin3s-wp-template-selector/license.svg)](https://github.com/LIN3S/WPTemplateSelector/blob/master/LICENSE)
+[![License](https://poser.pugx.org/lin3s/template-selector/license.svg)](https://github.com/LIN3S/WPTemplateSelector/blob/master/LICENSE)
 
 [1]: http://lin3s.com
 [2]: https://github.com/LIN3S/WPRouting
