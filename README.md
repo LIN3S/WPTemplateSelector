@@ -22,29 +22,34 @@ With this plugin you can now use a hook to add your custom page templates, and a
 editor to select the one you need.
 
 ## Installation
-The recommended and the most suitable way to install is through [Composer][4]. Be sure that the tool is installed
-in your system and copy the following piece of code inside your `composer.json`:
+The recommended and the most suitable way to install is through Composer. Be sure that the tool is installed in your
+system and execute the following command:
 ```
-{
-    "type": "composer",
-    "url": "http://wpackagist.org"
-},
-"require": {
-    "wpackagist-plugin/template-selector": "~1.0"
+$ composer require lin3s/template-selector
+```
+*Remember that Template Selector is a* **Wordpress plugin** *so, they can customize the location path easily with
+Composer ([more info][5]):*
+```json
+"extra": {
+    "installer-paths": {
+        "src/plugins/{$name}/": ["type:wordpress-plugin"],
+        "src/themes/{$name}/": ["type:wordpress-theme"]
+    }
 }
 ```
 
 ## Usage
 To declare the templates just add the following hook to your WordPress theme.
+```php
+add_filter('template_selector_available', [$this, 'templates']);
 
-    add_filter('template_selector_available', [$this, 'templates']);
-    
-    public function templates($templates) {
-        return array_merge($templates, [
-            "template-slug"    => 'Template name shown in admin',
-            "another-template" => 'Another template'
-        ]);
-    }
+public function templates($templates) {
+    return array_merge($templates, [
+        'template-slug'    => 'Template name shown in admin',
+        'another-template' => 'Another template'
+    ]);
+}
+```
 
 ## Licensing Options
 [![License](https://poser.pugx.org/lin3s/template-selector/license.svg)](https://github.com/LIN3S/WPTemplateSelector/blob/master/LICENSE)
@@ -53,3 +58,4 @@ To declare the templates just add the following hook to your WordPress theme.
 [2]: https://github.com/LIN3S/WPRouting
 [3]: https://symfony.com/
 [4]: https://getcomposer.org/
+[5]: https://getcomposer.org/doc/faqs/how-do-i-install-a-package-to-a-custom-path-for-my-framework.md
