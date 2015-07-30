@@ -13,12 +13,10 @@ We came up with this solution in our way to a MVC architecture because many PHP 
 root directory with dummy unstructured code.
 
 This way, we are now able to match routes used by Wordpress with the actions from our Controllers, letting us to keep
-a simpler a more intuitive theme folder structure for new comming developers.
-
-Is an alternative to using annotations to declare new page templates.
+a simpler a more intuitive theme folder structure for new coming developers.
 
 We faced some issues when we started using WP-Routing plugin, creating a php file in theme's root folder had no sense
-just to add an annotation.
+just to add an annotation. Therefore, we came up with this alternative to avoid using annotations to declare new page templates.
 
 With this plugin you can now use a hook to add your custom page templates, and a selector will be added in your page
 editor to select the one you need.
@@ -37,7 +35,7 @@ in your system and copy the following piece of code inside your `composer.json`:
 ```
 
 ## Usage
-To declare the templates you want to use just add the following hook to your WordPress theme.
+To declare the templates just add the following hook to your WordPress theme.
 
     add_filter('template_selector_available', [$this, 'templates']);
     
