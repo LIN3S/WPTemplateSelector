@@ -18,8 +18,8 @@ a simpler a more intuitive theme folder structure for new coming developers.
 We faced some issues when we started using WP-Routing plugin, creating a php file in theme's root folder had no sense
 just to add an annotation. Therefore, we came up with this alternative to avoid using annotations to declare new page templates.
 
-With this plugin you can now use a hook to add your custom page templates, and a selector will be added in your page
-editor to select the one you need.
+With this plugin you can now use a hook to add your custom page templates, and the default template selector items will
+be replaced with your programatically declared templates.
 
 ## Installation
 The recommended and the most suitable way to install is through Composer. Be sure that the tool is installed in your
@@ -33,7 +33,8 @@ Composer ([more info][5]):*
 "extra": {
     "installer-paths": {
         "src/plugins/{$name}/": ["type:wordpress-plugin"],
-        "src/themes/{$name}/": ["type:wordpress-theme"]
+        "src/themes/{$name}/": ["type:wordpress-theme"],
+        "src/mu-plugins/{$name}/": ["type:wordpress-muplugin"]
     }
 }
 ```
