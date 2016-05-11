@@ -24,15 +24,15 @@ class TemplateSelector
      */
     public function __construct()
     {
-        add_filter('theme_page_templates', [$this, 'filter_theme_page_templates'], 20, 3);
+        add_filter('theme_page_templates', [$this, 'filterThemePageTemplates'], 20, 3);
     }
 
     /**
-     * Filter the selectable templates.
+     * Filters the selectable templates.
      *
      * @return mixed
      */
-    public function filter_theme_page_templates()
+    public function filterThemePageTemplates()
     {
         return apply_filters('template_selector_available', []);
     }
