@@ -30,9 +30,9 @@ class TemplateSelector
     /**
      * Filter the selectable templates.
      *
-     * @return mixed|void
+     * @return mixed
      */
-    function filter_theme_page_templates()
+    public function filter_theme_page_templates()
     {
         return apply_filters('template_selector_available', []);
     }
