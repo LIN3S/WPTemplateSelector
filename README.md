@@ -7,6 +7,10 @@
 [![Latest Stable Version](https://poser.pugx.org/lin3s/template-selector/v/stable.svg)](https://packagist.org/packages/lin3s/template-selector)
 [![Latest Unstable Version](https://poser.pugx.org/lin3s/template-selector/v/unstable.svg)](https://packagist.org/packages/lin3s/template-selector)
 
+# DEPRECATED: included in [WPFoundation 1.6.0](https://github.com/LIN3S/WPFoundation)
+This feature is included by default in WPFoundation since version 1.6.0. You just need to extend the abstract class
+`LIN3S\WPFoundation\Configuration\Theme\Theme` to get it working.
+
 ## Why?
 [LIN3S][1]'s [WPRouting][2] is a very robust solution to manage the Wordpress routing system in a [Symfony][3] way.
 We came up with this solution in our way to a MVC architecture because many PHP files where scattered in our template
